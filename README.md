@@ -1,4 +1,4 @@
 # MyGenome
 University of Kentucky, Genome Sequencing.
 
-![practiceDirectory/Assignment 1]
+![/practiceDirectory/Assignment 1]
