@@ -1,11 +1,11 @@
 ## MyGenome
 University of Kentucky, Genome Sequencing.
 
-##(4) Upload RAW Data
+## (4) Upload RAW Data
 -Download "key file" (aspera.openssh) on local machine, then scp to vm.
 - TO BE CONTINUED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-##(5)Trim Sequence Reads
+## (5)Trim Sequence Reads
 -Use command line tools to count sequence reads in the forward (_1.fq.gz) and reverse (_2.fq.gz) directions
   7364314
 -Assess sequence quality using FASTQC: fastqc HD1_1.fq.gz  HD1_2.fq.gz
@@ -33,5 +33,5 @@ TrimmomaticPE: Completed successfully
 -Assess sequence quality of the trimmed reads (paired only) using FASTQC: fastqc HD1_1_paired.fq HD1_2_paired.fq
 -Transfer the .html output files to your local machine using scp and open the file.
 
-##(6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
+## (6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
 - TO BE CONTINUED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
