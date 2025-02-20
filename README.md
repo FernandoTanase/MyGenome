@@ -1,7 +1,7 @@
 ## MyGenome
 University of Kentucky, Genome Sequencing.
 
-## (4) Upload RAW Data
+## (4) Upload raw sequence data to NCBI
 -Download "key file" (aspera.openssh) on local machine, then scp to vm.
 - TO BE CONTINUED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
