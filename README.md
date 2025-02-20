@@ -2,8 +2,13 @@
 University of Kentucky, Genome Sequencing.
 
 ## (4) Upload raw sequence data to NCBI
--Download "key file" (aspera.openssh) on local machine, then >>>>>>>>>>>>scp to vm.
-- TO BE CONTINUED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-Download "key file" (aspera.openssh) on local machine, then scp to vm ('sequences' directory).
+- wget the Aspera Connect Software into the 'sequences' directory:  wget https://d3gcli72yxqn2z.cloudfront.net/downloads/connect/latest/bin/ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
+- Uncompress the archive: tar zxvf ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
+- Install the software: bash ibm-aspera-connect_4.2.13.820_linux_x86_64.sh
+- To run the ascp transfer program, we need to tell the shell exactly where to find it. The installation places the software inside a "hidden" directory (.aspera) in your home directory: ls ~/.aspera
+- To run the program we need to provide the complete path to it: ~/.aspera/connect/bin/ascp -i ~/sequences/aspera.openssh -QT -l100m -k1 -d ~/myGenome/Po18 subasp@upload.ncbi.nlm.nih.gov:uploads/fernando.tanase_uky.edu_bqluzRru
+- Submit screenshot of email confirmation/"BioProject submission (of my sample)" page + enter SRA accession number (SRR prefix) to the metadata sheet.
 
 ## (5)Trim Sequence Reads
 -Use command line tools to count sequence reads in the forward (_1.fq.gz) and reverse (_2.fq.gz) directions
