@@ -1,7 +1,8 @@
 ## MyGenome
 University of Kentucky, Genome Sequencing.
 
-## (4) Upload raw sequence data to NCBI
+## Module 5
+# (4) Upload raw sequence data to NCBI (SRA)
 -Download "key file" (aspera.openssh) on local machine, then scp to vm ('sequences' directory).
 - wget the Aspera Connect Software into the 'sequences' directory:  wget https://d3gcli72yxqn2z.cloudfront.net/downloads/connect/latest/bin/ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
 - Uncompress the archive: tar zxvf ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
@@ -10,7 +11,7 @@ University of Kentucky, Genome Sequencing.
 - To run the program we need to provide the complete path to it: ~/.aspera/connect/bin/ascp -i ~/sequences/aspera.openssh -QT -l100m -k1 -d ~/myGenome/Po18 subasp@upload.ncbi.nlm.nih.gov:uploads/fernando.tanase_uky.edu_bqluzRru
 - Submit screenshot of email confirmation/"BioProject submission (of my sample)" page + enter SRA accession number (SRR prefix) to the metadata sheet.
 
-## (5)Trim Sequence Reads
+# (5)Trim Sequence Reads
 -Use command line tools to count sequence reads in the forward (_1.fq.gz) and reverse (_2.fq.gz) directions
   7364314
 -Assess sequence quality using FASTQC: fastqc HD1_1.fq.gz  HD1_2.fq.gz
@@ -38,5 +39,14 @@ TrimmomaticPE: Completed successfully
 -Assess sequence quality of the trimmed reads (paired only) using FASTQC: fastqc HD1_1_paired.fq HD1_2_paired.fq
 -Transfer the .html output files to your local machine using scp and open the file.
 
-## (6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
-- TO BE CONTINUED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# (6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
+- Successful trim.
+  
+# (7) Use command line to count number of paired reads.
+- x
+# (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
+- x
+
+## Module 4
+# Create a working directory on the MCC Supercomputer
+- .......................
