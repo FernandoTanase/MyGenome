@@ -13,12 +13,12 @@ University of Kentucky, Genome Sequencing.
 - Submit screenshot of email confirmation/"BioProject submission (of my sample)" page + enter SRA accession number (SRR prefix) to the metadata sheet.
 
 # (5)Trim Sequence Reads
--Use command line tools to count sequence reads in the forward (_1.fq.gz) and reverse (_2.fq.gz) directions
+- Use command line tools to count sequence reads in the forward (_1.fq.gz) and reverse (_2.fq.gz) directions
   7364314
--Assess sequence quality using FASTQC: fastqc HD1_1.fq.gz  HD1_2.fq.gz
--Download adaptors.fasta
--Trimmomatic: java -jar /home/fcta222/assembly/trimmomatic-0.38.jar PE -threads 2 -phred33 \
--trimlog Br80_errorlog.txt \
+- Assess sequence quality using FASTQC: fastqc HD1_1.fq.gz  HD1_2.fq.gz
+- Download adaptors.fasta
+- Trimmomatic: java -jar /home/fcta222/assembly/trimmomatic-0.38.jar PE -threads 2 -phred33 \
+- trimlog Br80_errorlog.txt \
 ./HD1_1.fq ./HD1_2.fq \
 ./HD1_1_paired.fq ./HD1_1_unpaired.fq \
 ./HD1_2_paired.fq ./HD1_2_unpaired.fq \
@@ -37,8 +37,8 @@ ILLUMINACLIP: Using 1 prefix pairs, 5 forward/reverse sequences, 0 forward only 
 Input Read Pairs: 7364314 Both Surviving: 6593963 (89.54%) Forward Only Surviving: 133300 (1.81%) Reverse Only Surviving: 596622 (8.10%) Dropped: 40429 (0.55%)
 TrimmomaticPE: Completed successfully
 
--Assess sequence quality of the trimmed reads (paired only) using FASTQC: fastqc HD1_1_paired.fq HD1_2_paired.fq
--Transfer the .html output files to your local machine using scp and open the file.
+- Assess sequence quality of the trimmed reads (paired only) using FASTQC: fastqc HD1_1_paired.fq HD1_2_paired.fq
+- Transfer the .html output files to your local machine using scp and open the file.
 
 # (6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
 - Successful trim.
