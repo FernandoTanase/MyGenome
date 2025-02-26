@@ -43,10 +43,15 @@ TrimmomaticPE: Completed successfully
 # (6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
 - Successful trim.
   
-# (7) Use command line to count number of paired reads.
-- x
+# \# raw reads (single end)
+- zgrep -c "^@" HD1_1.fq.gz
+  7364314
+
+# \# cleaned reads used for assembly (single end)
+
 # (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
-- x
+- expr $(wc -l < HD1_1_paired.fq) / 4 + $(wc -l < HD1_2_paired.fq) / 4
+  13187926
 
 ## Module 4
 # Create a working directory on the MCC Supercomputer
