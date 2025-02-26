@@ -3,7 +3,8 @@ University of Kentucky, Genome Sequencing.
 
 ## Module 5
 # (4) Upload raw sequence data to NCBI (SRA)
--Download "key file" (aspera.openssh) on local machine, then scp to vm ('sequences' directory).
+- Complete SRA file on the NCBI website.
+- Download "key file" (aspera.openssh) on local machine, then scp to vm ('sequences' directory).
 - wget the Aspera Connect Software into the 'sequences' directory:  wget https://d3gcli72yxqn2z.cloudfront.net/downloads/connect/latest/bin/ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
 - Uncompress the archive: tar zxvf ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
 - Install the software: bash ibm-aspera-connect_4.2.13.820_linux_x86_64.sh
