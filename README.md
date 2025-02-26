@@ -50,7 +50,8 @@ TrimmomaticPE: Completed successfully
 # # cleaned reads used for assembly (single end)
 
 # (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
--  e xpr $(wc -l < HD1_1_paired.fq) / 4 + $(wc -l < HD1_2_paired.fq) / 4
+- ![image](https://github.com/user-attachments/assets/83dfa950-f85d-4eb4-a310-bb3962281e98)
+
   13187926
 
 ## Module 4
