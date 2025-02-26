@@ -48,7 +48,9 @@ TrimmomaticPE: Completed successfully
     7364314
 
 # # cleaned reads used for assembly (single end)
-
+- ![image](https://github.com/user-attachments/assets/88d7805d-9e28-4cfe-8568-bd4d6ffff889)
+  6593963
+  
 # (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
 - ![image](https://github.com/user-attachments/assets/83dfa950-f85d-4eb4-a310-bb3962281e98)
     13187926
