@@ -61,4 +61,7 @@ TrimmomaticPE: Completed successfully
 
 ## Module 4
 # Create a working directory on the MCC Supercomputer
-- .......................
+- Directory: /project/farman_s25abt480
+- Created: /project/farman_s25abt480/fcta222
+# scp .fastqc files (~/assembly/Bcereus_S1_L001_R1_001.fastq.gz & Bcereus_S1_L001_R2_001.fastq.gz) from VM -to-> Supercomputer.
+CONT>>>>>>>>>>>>>>
