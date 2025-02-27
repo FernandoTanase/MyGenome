@@ -52,8 +52,12 @@ TrimmomaticPE: Completed successfully
   6593963
   
 # (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
-- ![image](https://github.com/user-attachments/assets/83dfa950-f85d-4eb4-a310-bb3962281e98)
-    13187926
+- awk 'NR % 4 == 2' HD1_1_paired.fq | tr -d '\r\n' | wc -m
+  983195403
+- awk 'NR % 4 == 2' HD1_2_paired.fq | tr -d '\r\n' | wc -m
+  988705693
+
+  => 983195403 + 988705693 = 1971901096
 
 ## Module 4
 # Create a working directory on the MCC Supercomputer
