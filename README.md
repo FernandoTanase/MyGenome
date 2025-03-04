@@ -59,9 +59,10 @@ TrimmomaticPE: Completed successfully
 
   => 983195403 + 988705693 = 1971901096
 
-## Module 4
+## Module 4(ONLY DOCUMENT THINGS DONE IN myGenome DIRECTORY)
 # Create a working directory on the MCC Supercomputer
 - Directory: /project/farman_s25abt480
 - Created: /project/farman_s25abt480/fcta222
 # scp .fastqc files (~/assembly/Bcereus_S1_L001_R1_001.fastq.gz & Bcereus_S1_L001_R2_001.fastq.gz) from VM -to-> Supercomputer.
-ONLY DOCUMENT THINGS DONE IN myGenome DIRECTORY>>>>>>>>>>>>>>
+# Use Velvet Advisor to ghelp us find a good k-mer value befor ebeginning assembly
+- https://dna.med.monash.edu/~torsten/velvet_advisor/
