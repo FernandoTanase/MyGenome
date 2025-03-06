@@ -64,5 +64,15 @@ TrimmomaticPE: Completed successfully
 - Directory: /project/farman_s25abt480
 - Created: /project/farman_s25abt480/fcta222
 # scp .fastqc files (~/assembly/Bcereus_S1_L001_R1_001.fastq.gz & Bcereus_S1_L001_R2_001.fastq.gz) from VM -to-> Supercomputer.
-# Use Velvet Advisor to ghelp us find a good k-mer value befor ebeginning assembly
+# Use Velvet Advisor to help us find a good k-mer value befor ebeginning assembly
 - https://dna.med.monash.edu/~torsten/velvet_advisor/
+# Run velveth using the suggested k-mer value
+-  velveth Bcereus_velvet1 181 -shortPaired -fastq.gz -separate \
+Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz
+# Run velvetg to perform the assembly
+- velvetg Bcereus_velvet1
+# Run velvet using a range of k-mer values 
+- velvetoptimiser -s 121 -e 201 -x 10 -d Bcereus_velvet_optimal \
+f '-shortPaired -fastq.gz -separate Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz' \
+t 1
+
