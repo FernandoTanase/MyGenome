@@ -1,8 +1,8 @@
-## MyGenome
+# MyGenome
 University of Kentucky, Genome Sequencing.
 
-## Module 5
-# (4) Upload raw sequence data to NCBI (SRA)
+# Module 5
+## (4) Upload raw sequence data to NCBI (SRA)
 - Create an SRA submission on the NCBI website.
 - Download "key file" (aspera.openssh) on local machine, then scp to vm ('sequences' directory).
 - wget the Aspera Connect Software into the 'sequences' directory:  wget https://d3gcli72yxqn2z.cloudfront.net/downloads/connect/latest/bin/ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
@@ -12,7 +12,7 @@ University of Kentucky, Genome Sequencing.
 - To run the program we need to provide the complete path to it: ~/.aspera/connect/bin/ascp -i ~/sequences/aspera.openssh -QT -l100m -k1 -d ~/myGenome/Po18 subasp@upload.ncbi.nlm.nih.gov:uploads/fernando.tanase_uky.edu_bqluzRru
 - Submit screenshot of email confirmation/"BioProject submission (of my sample)" page + enter SRA accession number (SRR prefix) to the metadata sheet.
 
-# (5)Trim Sequence Reads
+## (5)Trim Sequence Reads
 - Use command line tools to count sequence reads in the forward (_1.fq.gz) and reverse (_2.fq.gz) directions
   7364314
 - Assess sequence quality using FASTQC: fastqc HD1_1.fq.gz  HD1_2.fq.gz
@@ -40,18 +40,18 @@ TrimmomaticPE: Completed successfully
 - Assess sequence quality of the trimmed reads (paired only) using FASTQC: fastqc HD1_1_paired.fq HD1_2_paired.fq
 - Transfer the .html output files to your local machine using scp and open the file.
 
-# (6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
+## (6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
 - Successful trim.
   
-# # raw reads (single end)
+## # raw reads (single end)
 - zgrep -c "^@" HD1_1.fq.gz
     7364314
 
-# # cleaned reads used for assembly (single end)
+## # cleaned reads used for assembly (single end)
 - ![image](https://github.com/user-attachments/assets/88d7805d-9e28-4cfe-8568-bd4d6ffff889)
   6593963
   
-# (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
+## (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
 - awk 'NR % 4 == 2' HD1_1_paired.fq | tr -d '\r\n' | wc -m
   983195403
 - awk 'NR % 4 == 2' HD1_2_paired.fq | tr -d '\r\n' | wc -m
@@ -59,30 +59,30 @@ TrimmomaticPE: Completed successfully
 
   => 983195403 + 988705693 = 1971901096
 
-## Module 4/Lab3
-# Create a working directory on the MCC Supercomputer
+# Module 4/Lab3
+## Create a working directory on the MCC Supercomputer
 - Directory: /project/farman_s25abt480
 - Created: /project/farman_s25abt480/fcta222
-# scp forward & reversed, trimmed assembly from VM -to-> Supercomputer personal directory: 
+## scp forward & reversed, trimmed assembly from VM -to-> Supercomputer personal directory: 
 - ```scp fcta222@fcta222.cs.uky.edu:/home/fcta222/myGenome/Po18/HD1_1_paired.fq .``` (and HD1_2_paired.fq too).
-# Copy the velvetoptimiser script to the directory:
+## Copy the velvetoptimiser script to the directory:
 - ```cp ../SLURM_SCRIPTS/velvetoptimiser_noclean.sh .```
-# Add personal email address to the mail-user line of the slurm script for notifications:
+## Add personal email address to the mail-user line of the slurm script for notifications:
 - Found in velvetoptimiser_noclean.sh, line #SBATCH --mail-user farman@uky.edu,linkBlueID@uky.edu
-# Submit assemblies to the SLURM queue:
+## Submit assemblies to the SLURM queue:
 - ```sbatch velvetoptimiser_noclean.sh HD1 61 131 10```
 - Submitted batch job 30048974
 
 
 
-# Use Velvet Advisor to help us find a good k-mer value befor ebeginning assembly
+## Use Velvet Advisor to help us find a good k-mer value befor ebeginning assembly
 - https://dna.med.monash.edu/~torsten/velvet_advisor/
-# Run velveth using the suggested k-mer value
+## Run velveth using the suggested k-mer value
 -  velveth Bcereus_velvet1 181 -shortPaired -fastq.gz -separate \
 Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz
-# Run velvetg to perform the assembly
+## Run velvetg to perform the assembly
 - velvetg Bcereus_velvet1
-# Run velvet optimiser using a range of k-mer values 
+## Run velvet optimiser using a range of k-mer values 
 - velvetoptimiser -s 121 -e 201 -x 10 -d Bcereus_velvet_optimal \
 f '-shortPaired -fastq.gz -separate Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz' \
 t 1
