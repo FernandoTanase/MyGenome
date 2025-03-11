@@ -71,8 +71,8 @@ TrimmomaticPE: Completed successfully
 Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz
 # Run velvetg to perform the assembly
 - velvetg Bcereus_velvet1
-# Run velvet using a range of k-mer values 
-- velvetoptimiser -s 121 -e 201 -x 10 -d Bcereus_velvet_optimal \
+# Run velvet optimiser using a range of k-mer values 
+- '''velvetoptimiser -s 121 -e 201 -x 10 -d Bcereus_velvet_optimal \
 f '-shortPaired -fastq.gz -separate Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz' \
-t 1
+t 1'''
 
