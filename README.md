@@ -63,7 +63,8 @@ TrimmomaticPE: Completed successfully
 # Create a working directory on the MCC Supercomputer
 - Directory: /project/farman_s25abt480
 - Created: /project/farman_s25abt480/fcta222
-# scp trimmed assembly from VM -to-> Supercomputer: ```powershell scp fcta222@fcta222.cs.uky.edu:/home/fcta222/myGenome/Po18/HD1_1_paired.fq .``` (and HD1_2_paired.fq too).
+# scp trimmed assembly from VM -to-> Supercomputer: 
+- ```powershell scp fcta222@fcta222.cs.uky.edu:/home/fcta222/myGenome/Po18/HD1_1_paired.fq .``` (and HD1_2_paired.fq too).
 # Use Velvet Advisor to help us find a good k-mer value befor ebeginning assembly
 - https://dna.med.monash.edu/~torsten/velvet_advisor/
 # Run velveth using the suggested k-mer value
