@@ -72,9 +72,17 @@ TrimmomaticPE: Completed successfully
 ## Submit assemblies to the SLURM queue:
 - ```sbatch velvetoptimiser_noclean.sh HD1 61 131 10```
 - Submitted batch job 30048974
+## Check progress by peeking at the SLURM log file:
+- ```cat slurm-30048974.out```
+## Check queued jobs or cancel job, commands:
+- ```squeue | grep <linkBlueID>```
+- ```scancel <jobID>```
+## Rerun VelvetOptimiser using a narrower k-mer range and step size of 2 to reach the best possible dataset's assembly:
+- ```sbatch velvetoptimiser_noclean.sh <genomeID> <start_kmer> <end_kmer> <step_size>```
 
-
-
+# TODO:
+- include figures showing the sequence quality plots and adaptor contamination tabs from fastqc, pre-and post-trimming. It is only necessary to show one set of plots (forward OR reverse reads)
+# Practice Assembly (Delete When Done).
 ## Use Velvet Advisor to help us find a good k-mer value befor ebeginning assembly
 - https://dna.med.monash.edu/~torsten/velvet_advisor/
 ## Run velveth using the suggested k-mer value
