@@ -59,11 +59,11 @@ TrimmomaticPE: Completed successfully
 
   => 983195403 + 988705693 = 1971901096
 
-## Module 4(ONLY DOCUMENT THINGS DONE IN myGenome DIRECTORY)
+## Module 4/Lab3
 # Create a working directory on the MCC Supercomputer
 - Directory: /project/farman_s25abt480
 - Created: /project/farman_s25abt480/fcta222
-# scp .fastqc files (~/assembly/Bcereus_S1_L001_R1_001.fastq.gz & Bcereus_S1_L001_R2_001.fastq.gz) from VM -to-> Supercomputer.
+# scp trimmed assembly from VM -to-> Supercomputer: ```powershell scp fcta222@fcta222.cs.uky.edu:/home/fcta222/myGenome/Po18/HD1_1_paired.fq .``` (and HD1_2_paired.fq too).
 # Use Velvet Advisor to help us find a good k-mer value befor ebeginning assembly
 - https://dna.med.monash.edu/~torsten/velvet_advisor/
 # Run velveth using the suggested k-mer value
@@ -72,7 +72,8 @@ Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz
 # Run velvetg to perform the assembly
 - velvetg Bcereus_velvet1
 # Run velvet optimiser using a range of k-mer values 
-- ```velvetoptimiser -s 121 -e 201 -x 10 -d Bcereus_velvet_optimal \
+- velvetoptimiser -s 121 -e 201 -x 10 -d Bcereus_velvet_optimal \
 f '-shortPaired -fastq.gz -separate Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz' \
-t 1```
+t 1
+
 
