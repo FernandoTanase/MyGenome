@@ -1,6 +1,16 @@
 # MyGenome
 University of Kentucky, Genome Sequencing.
 
+# Sequence Quality Plots.
+## Pre-Trimming:
+- insert image!
+## Post-Trimming:
+- insert image!
+
+# Adaptor Contamination.
+## Pre-Trimming:
+- 
+
 # Module 5
 ## (4) Upload raw sequence data to NCBI (SRA)
 - Create an SRA submission on the NCBI website.
@@ -82,17 +92,3 @@ TrimmomaticPE: Completed successfully
 
 # TODO:
 - include figures showing the sequence quality plots and adaptor contamination tabs from fastqc, pre-and post-trimming. It is only necessary to show one set of plots (forward OR reverse reads)
-# Practice Assembly (Delete When Done).
-## Use Velvet Advisor to help us find a good k-mer value befor ebeginning assembly
-- https://dna.med.monash.edu/~torsten/velvet_advisor/
-## Run velveth using the suggested k-mer value
--  velveth Bcereus_velvet1 181 -shortPaired -fastq.gz -separate \
-Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz
-## Run velvetg to perform the assembly
-- velvetg Bcereus_velvet1
-## Run velvet optimiser using a range of k-mer values 
-- velvetoptimiser -s 121 -e 201 -x 10 -d Bcereus_velvet_optimal \
-f '-shortPaired -fastq.gz -separate Bcereus_S1_L001_R1_001.fastq.gz Bcereus_S1_L001_R2_001.fastq.gz' \
-t 1
-
-
