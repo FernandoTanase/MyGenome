@@ -63,8 +63,18 @@ TrimmomaticPE: Completed successfully
 # Create a working directory on the MCC Supercomputer
 - Directory: /project/farman_s25abt480
 - Created: /project/farman_s25abt480/fcta222
-# scp trimmed assembly from VM -to-> Supercomputer: 
-- ```powershell scp fcta222@fcta222.cs.uky.edu:/home/fcta222/myGenome/Po18/HD1_1_paired.fq .``` (and HD1_2_paired.fq too).
+# scp forward & reversed, trimmed assembly from VM -to-> Supercomputer personal directory: 
+- ```scp fcta222@fcta222.cs.uky.edu:/home/fcta222/myGenome/Po18/HD1_1_paired.fq .``` (and HD1_2_paired.fq too).
+# Copy the velvetoptimiser script to the directory:
+- ```cp ../SLURM_SCRIPTS/velvetoptimiser_noclean.sh .```
+# Add personal email address to the mail-user line of the slurm script for notifications:
+- Found in velvetoptimiser_noclean.sh, line #SBATCH --mail-user farman@uky.edu,linkBlueID@uky.edu
+# Submit assemblies to the SLURM queue:
+- ```sbatch velvetoptimiser_noclean.sh HD1 61 131 10```
+- Submitted batch job 30048974
+
+
+
 # Use Velvet Advisor to help us find a good k-mer value befor ebeginning assembly
 - https://dna.med.monash.edu/~torsten/velvet_advisor/
 # Run velveth using the suggested k-mer value
