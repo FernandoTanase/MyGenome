@@ -61,13 +61,14 @@ TrimmomaticPE: Completed successfully
 ## Check the trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination.
 - Successful trim.
   
-## # raw reads (single end)
+## # raw reads (single end).
 - ```zgrep -c "^@" HD1_1.fq.gz```
 - Output: 7364314
 
-## # cleaned reads used for assembly (single end)
+## # cleaned reads used for assembly (single end).
+- ```expr $(wc -l < HD1_2_paired.fq) / 4```
 - ![image](https://github.com/user-attachments/assets/88d7805d-9e28-4cfe-8568-bd4d6ffff889)
-  6593963
+- Output: 6593963
   
 ## (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
 - ```awk 'NR % 4 == 2' HD1_1_paired.fq | tr -d '\r\n' | wc -m```
