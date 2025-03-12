@@ -1,5 +1,5 @@
 # MyGenome
-University of Kentucky, Genome Sequencing.
+## University of Kentucky, Genome Sequencing.
 
 # Sequence Quality Plots.
 ## Pre-Trimming:
@@ -54,26 +54,26 @@ Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
 ILLUMINACLIP: Using 1 prefix pairs, 5 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
 Input Read Pairs: 7364314 Both Surviving: 6593963 (89.54%) Forward Only Surviving: 133300 (1.81%) Reverse Only Surviving: 596622 (8.10%) Dropped: 40429 (0.55%)
 TrimmomaticPE: Completed successfully
-- Assess sequence quality of the trimmed reads (paired only) using FASTQC: fastqc HD1_1_paired.fq HD1_2_paired.fq
+- Assess sequence quality of the trimmed reads (paired only) using FASTQC: 
+```fastqc HD1_1_paired.fq HD1_2_paired.fq```
 - Transfer the .html output files to your local machine using scp and open the file.
 
-## (6) Check your trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination
+## Check the trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination.
 - Successful trim.
   
 ## # raw reads (single end)
-- zgrep -c "^@" HD1_1.fq.gz
-    7364314
+- ```zgrep -c "^@" HD1_1.fq.gz```
+- Output: 7364314
 
 ## # cleaned reads used for assembly (single end)
 - ![image](https://github.com/user-attachments/assets/88d7805d-9e28-4cfe-8568-bd4d6ffff889)
   6593963
   
 ## (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
-- awk 'NR % 4 == 2' HD1_1_paired.fq | tr -d '\r\n' | wc -m
-  983195403
-- awk 'NR % 4 == 2' HD1_2_paired.fq | tr -d '\r\n' | wc -m
-  988705693
-
+- ```awk 'NR % 4 == 2' HD1_1_paired.fq | tr -d '\r\n' | wc -m```
+- Output: 983195403
+- ```awk 'NR % 4 == 2' HD1_2_paired.fq | tr -d '\r\n' | wc -m```
+- Output: 988705693
   => 983195403 + 988705693 = 1971901096
 
 # Module 4/Lab3
