@@ -3,9 +3,11 @@
 
 # Sequence Quality Plots.
 ## Pre-Trimming:
-- insert image!
+### ![image](https://github.com/user-attachments/assets/57dfd546-49e6-4f6e-8684-788efe1d286b)
+### ![image](https://github.com/user-attachments/assets/26e47aa5-a859-4219-ab5e-6ab6887220c6)
+### ![image](https://github.com/user-attachments/assets/fc8c4b83-165e-46af-88f1-5a892c5863fa)
 ## Post-Trimming:
-- insert image!
+
 
 # Adaptor Contamination.
 ## Pre-Trimming:
