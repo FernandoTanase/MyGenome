@@ -5,12 +5,11 @@
 ## Pre-Trimming:
 ### ![image](https://github.com/user-attachments/assets/57dfd546-49e6-4f6e-8684-788efe1d286b)
 ### ![image](https://github.com/user-attachments/assets/26e47aa5-a859-4219-ab5e-6ab6887220c6)
-### ![image](https://github.com/user-attachments/assets/fc8c4b83-165e-46af-88f1-5a892c5863fa)
+### ![image](https://github.com/user-attachments/assets/0f631b98-8025-4bbd-add5-28d153491df1)
 ## Post-Trimming:
 ### ![image](https://github.com/user-attachments/assets/f279c769-3fa9-412c-9ae5-b31aa135b852)
 ### ![image](https://github.com/user-attachments/assets/7b5812c5-fd71-4cad-a5f8-56d327d67960)
 ### ![image](https://github.com/user-attachments/assets/c54200eb-c471-4c8b-818c-3e8b7e2c2262)
-
 
 # Adaptor Contamination.
 ## Pre-Trimming:
@@ -98,6 +97,3 @@ TrimmomaticPE: Completed successfully
 - ```scancel <jobID>```
 ## Rerun VelvetOptimiser using a narrower k-mer range and step size of 2 to reach the best possible dataset's assembly:
 - ```sbatch velvetoptimiser_noclean.sh <genomeID> <start_kmer> <end_kmer> <step_size>```
-
-# TODO:
-- include figures showing the sequence quality plots and adaptor contamination tabs from fastqc, pre-and post-trimming. It is only necessary to show one set of plots (forward OR reverse reads)
