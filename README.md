@@ -9,6 +9,8 @@ University of Kentucky, Genome Sequencing.
 
 # Adaptor Contamination.
 ## Pre-Trimming:
+- ![image](https://github.com/user-attachments/assets/19568452-3820-4214-b91c-617719f662e3)
+## Post-Trimming:
 - 
 
 # Module 5
