@@ -14,7 +14,7 @@
 ![image](https://github.com/user-attachments/assets/92f7e37e-a469-4abc-b5d6-caf831b02357)
 
 
-# Module 5
+# Upload Raw Genome to NCBI.
 ## Upload raw sequence data to NCBI (SRA)
 - Create an SRA submission on the NCBI website.
 - Download "key file" (aspera.openssh) on local machine, then scp to vm ('sequences' directory).
@@ -30,6 +30,7 @@
 ```~/.aspera/connect/bin/ascp -i ~/sequences/aspera.openssh -QT -l100m -k1 -d ~/myGenome/Po18 subasp@upload.ncbi.nlm.nih.gov:uploads/fernando.tanase_uky.edu_bqluzRru```
 - Submit screenshot of email confirmation/"BioProject submission (of my sample)" page + enter SRA accession number (SRR prefix) to the metadata sheet.
 
+# Genome Quality Trimming, Module 5 (Lab2).
 ## Trim Sequence Reads
 - Use command line tools to count sequence reads in the forward (_1.fq.gz) and reverse (_2.fq.gz) directions:
   7364314
@@ -57,27 +58,22 @@ TrimmomaticPE: Completed successfully
 - Assess sequence quality of the trimmed reads (paired only) using FASTQC: 
 ```fastqc HD1_1_paired.fq HD1_2_paired.fq```
 - Transfer the .html output files to your local machine using scp and open the file.
-
 ## Check the trimmed reads using FASTQC to ensure removal of poor quality "tails" and adaptor contamination.
 - Successful trim.
-  
 ## # raw reads (single end).
 - ```zgrep -c "^@" HD1_1.fq.gz```
 - Output: 7364314
-
 ## # cleaned reads used for assembly (single end).
 - ```expr $(wc -l < HD1_2_paired.fq) / 4```
-- ![image](https://github.com/user-attachments/assets/88d7805d-9e28-4cfe-8568-bd4d6ffff889)
 - Output: 6593963
-  
-## (8) Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
+## Use command line to count the total number of bases in the paired end reads sequence (forward + reverse reads)
 - ```awk 'NR % 4 == 2' HD1_1_paired.fq | tr -d '\r\n' | wc -m```
 - Output: 983195403
 - ```awk 'NR % 4 == 2' HD1_2_paired.fq | tr -d '\r\n' | wc -m```
 - Output: 988705693
   => 983195403 + 988705693 = 1971901096
 
-# Module 4/Lab3
+# Genome Assembly, Module 4 (Lab3).
 ## Create a working directory on the MCC Supercomputer
 - Directory: /project/farman_s25abt480
 - Created: /project/farman_s25abt480/fcta222
