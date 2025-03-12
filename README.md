@@ -43,8 +43,7 @@ trimlog Br80_errorlog.txt \
 ./HD1_2_paired.fq ./HD1_2_unpaired.fq \
 ILLUMINACLIP:./adaptors.fasta:2:30:10 \
 SLIDINGWINDOW:20:20 MINLEN:120```
-
-TrimmomaticPE: Started with arguments:
+- Output, Started with arguments:
  -threads 2 -phred33 -trimlog Br80_errorlog.txt ./HD1_1.fq ./HD1_2.fq ./HD1_1_paired.fq ./HD1_1_unpaired.fq ./HD1_2_paired.fq ./HD1_2_unpaired.fq ILLUMINACLIP:./adaptors.fasta:2:30:10 SLIDINGWINDOW:20:20 MINLEN:120
 Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
 Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
@@ -55,7 +54,6 @@ Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
 ILLUMINACLIP: Using 1 prefix pairs, 5 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
 Input Read Pairs: 7364314 Both Surviving: 6593963 (89.54%) Forward Only Surviving: 133300 (1.81%) Reverse Only Surviving: 596622 (8.10%) Dropped: 40429 (0.55%)
 TrimmomaticPE: Completed successfully
-
 - Assess sequence quality of the trimmed reads (paired only) using FASTQC: fastqc HD1_1_paired.fq HD1_2_paired.fq
 - Transfer the .html output files to your local machine using scp and open the file.
 
