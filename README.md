@@ -7,6 +7,9 @@
 ### ![image](https://github.com/user-attachments/assets/26e47aa5-a859-4219-ab5e-6ab6887220c6)
 ### ![image](https://github.com/user-attachments/assets/fc8c4b83-165e-46af-88f1-5a892c5863fa)
 ## Post-Trimming:
+### ![image](https://github.com/user-attachments/assets/f279c769-3fa9-412c-9ae5-b31aa135b852)
+### ![image](https://github.com/user-attachments/assets/7b5812c5-fd71-4cad-a5f8-56d327d67960)
+### ![image](https://github.com/user-attachments/assets/c54200eb-c471-4c8b-818c-3e8b7e2c2262)
 
 
 # Adaptor Contamination.
