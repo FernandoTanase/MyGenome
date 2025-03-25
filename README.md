@@ -91,7 +91,7 @@ TrimmomaticPE: Completed successfully
 - ```sbatch velvetoptimiser_noclean.sh HD1 61 131 10```
 - Submitted batch job 30048974
 - ```sbatch velvetoptimiser_noclean.sh HD1 81 121 2```
-- .........
+- Submitted batch job 30167572
 ## Check progress by peeking at the SLURM log file:
 - ```cat slurm-30048974.out```
 ## Check queued jobs or cancel job, commands:
