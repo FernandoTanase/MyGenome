@@ -99,3 +99,7 @@ TrimmomaticPE: Completed successfully
 - ```scancel <jobID>```
 ## Rerun VelvetOptimiser using a narrower k-mer range and step size of 2 to reach the best possible dataset's assembly:
 - ```sbatch velvetoptimiser_noclean.sh <genomeID> <start_kmer> <end_kmer> <step_size>```
+
+# Genome Finalization.
+## Rename the optimized assembly.
+- In the directroy "/project/farman_s25abt480/fcta222/HD1/velvet_HD1_81_121_2_noclean". Command: ```mv contigs.fa HD1.famv contigs.fa HD1.fa```
