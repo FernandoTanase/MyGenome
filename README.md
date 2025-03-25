@@ -102,4 +102,7 @@ TrimmomaticPE: Completed successfully
 
 # Genome Finalization.
 ## Rename the optimized assembly.
-- In the directroy "/project/farman_s25abt480/fcta222/HD1/velvet_HD1_81_121_2_noclean". Command: ```mv contigs.fa HD1.famv contigs.fa HD1.fa```
+- In the directroy "/project/farman_s25abt480/fcta222/HD1/velvet_HD1_81_121_2_noclean". 
+Command: ```mv contigs.fa HD1.famv contigs.fa HD1.fa```
+## Copy the SimpleFastaHeaders.pl perl script.
+- TODO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
