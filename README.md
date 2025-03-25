@@ -90,7 +90,7 @@ TrimmomaticPE: Completed successfully
 ## Submit assemblies to the SLURM queue:
 - ```sbatch velvetoptimiser_noclean.sh HD1 61 131 10```
 - Submitted batch job 30048974
-- ```sbatch velvetoptimiser_noclean.sh HD1 83 119 2```
+- ```sbatch velvetoptimiser_noclean.sh HD1 81 121 2```
 - .........
 ## Check progress by peeking at the SLURM log file:
 - ```cat slurm-30048974.out```
