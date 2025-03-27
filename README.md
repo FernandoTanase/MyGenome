@@ -114,5 +114,13 @@ TrimmomaticPE: Completed successfully
 - ```perl CullShortContigs.pl /project/farman_s25abt480/fcta222/SimpleFastaHeaders/HD1_nh.fasta```
 - Output: "SimpleFastaHeaders/HD1_final.fasta"
 ## Using HD1_final.fasta, update the class metadata sheet (genome size & #contigs for step =2):
-- /# of contigs: ```grep -c "^>" HD1_final.fasta```
+- number of contigs: ```grep -c "^>" HD1_final.fasta```
 - genome size: ```awk '!/^>/ {total += length} END {print total}' HD1_final.fasta```
+## Copy the SeqLen.pl perl script into MCC:
+- ```cp /project/farman_s25abt480/SCRIPTs/SeqLen.pl .```
+## Using SeqLen.pl, determine the final genome size (after culling):
+- ```perl SeqLen.pl /project/farman_s25abt480/fcta222/SimpleFastaHeaders/HD1_final.fasta```
+- Output: number of contigs = 3624 & genome size = 40980394.
+
+# Check Genome Completeness using BUSCO.
+## CONTINUE WORK IN BUSCO DIRECTORY>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
