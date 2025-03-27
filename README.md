@@ -100,9 +100,19 @@ TrimmomaticPE: Completed successfully
 ## Rerun VelvetOptimiser using a narrower k-mer range and step size of 2 to reach the best possible dataset's assembly:
 - ```sbatch velvetoptimiser_noclean.sh <genomeID> <start_kmer> <end_kmer> <step_size>```
 
-# Genome Finalization.
+# Genome Finalization (apply to step-size 2 assembly only).
 ## Rename the optimized assembly.
-- In the directroy "/project/farman_s25abt480/fcta222/HD1/velvet_HD1_81_121_2_noclean". 
-Command: ```mv contigs.fa HD1.famv contigs.fa HD1.fa```
-## Copy the SimpleFastaHeaders.pl perl script.
-- TODO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+- In the MCC directroy "/project/farman_s25abt480/fcta222/HD1/velvet_HD1_81_121_2_noclean":
+- ```mv contigs.fa HD1.famv contigs.fa HD1.fa```
+## Copy the SimpleFastaHeaders.pl perl script into MCC:
+- ```cp /project/farman_s25abt480/SCRIPTs/SimpleFastaHeaders.pl ```
+## Using the script, rename the sequence headers to a standard format (HD1):
+- ```perl SimpleFastaHeaders.pl /project/farman_s25abt480/fcta222/HD1/velvet_HD1_81_121_2_noclean/HD1.fa HD1```
+## Copy the CullShortContigs.pl perl script into MCC:
+- ```cp /project/farman_s25abt480/SCRIPTs/CullShortContigs.pl .```
+## Use the CullShortContigs script on the file outputted by SimpleFastHeaders(HD1_nh.fasta):
+- ```perl CullShortContigs.pl /project/farman_s25abt480/fcta222/SimpleFastaHeaders/HD1_nh.fasta```
+- Output: "SimpleFastaHeaders/HD1_final.fasta"
+## Using HD1_final.fasta, update the class metadata sheet (genome size & #contigs for step =2):
+- /# of contigs: ```grep -c "^>" HD1_final.fasta```
+- genome size: ```awk '!/^>/ {total += length} END {print total}' HD1_final.fasta```
