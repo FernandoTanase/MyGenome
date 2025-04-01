@@ -132,4 +132,20 @@ TrimmomaticPE: Completed successfully
 - Copy the BuscoSingularity.sh script: ```cp /project/farman_s25abt480/SLURM_SCRIPTS/BuscoSingularity.sh .```
 -  Change email with personal email.
 -  Run BUSCO: ```sbatch BuscoSingularity.sh /project/farman_s25abt480/fcta222/FinalizeAssmebly/SimpleFastaHeaders/HD1_final.fasta```
--  ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+-  ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+# BLAST
+## Setup modern BLAST version in VM:
+- Download latest version of BLAST.
+- Setup PATH variable & .bash_profile file for the latest blastn version.
+## BLAST my genome:
+- scp HD1_final.fasta from MCC -to-> VM: ```scp fcta222@mcc.uky.edu:/project/farman_s25abt480/fcta222/FinalizeAssmebly/SimpleFastaHeade
+rs/HD1_final.fasta .```
+- Run a blastn search using the sequence in MoRepeats.fasta as the query and my genome as the 
+database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoRepeats.MyGenome.BLASTn0 \
+-evalue 1e-20 -outfmt 0```
+- Output: MoRepeats.MyGenome.BLASTn0
+- Run it again with format 6: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoRepeats.MyGenome.BLASTn6 \
+-evalue 1e-20 -outfmt 6```
+- Output: MoRepeats.MyGenome.BLASTn6
+- PARTII BLAST AND THE COMMAND LINE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
