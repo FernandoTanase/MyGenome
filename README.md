@@ -123,4 +123,13 @@ TrimmomaticPE: Completed successfully
 - Output: number of contigs = 3624 & genome size = 40980394.
 
 # Check Genome Completeness using BUSCO.
-## CONTINUE WORK IN BUSCO DIRECTORY>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Background:
+- BUSCO stands for "Benchmarking Using Single-Copy Orthologs" which simply means assessing genome completeness by using BLAST (tblastn) to search for a set of single-copy genes that are known to have "orthologsLinks to an external site." in genomes of related species. 
+- BUSCO has a repository of ortholog databases (odb) for all kingdoms: animals, plants, fungi, etc.
+- These databases can be further partitioned based on organismal phylum, class, etc.
+- We will use odb10_ascomycota (a fungal phylum) for our analyses.
+## Working in "/project/farman_s25abt480/fcta222/BUSCO" (MCC):
+- Copy the BuscoSingularity.sh script: ```cp /project/farman_s25abt480/SLURM_SCRIPTS/BuscoSingularity.sh .```
+-  Change email with personal email.
+-  Run BUSCO: ```sbatch BuscoSingularity.sh /project/farman_s25abt480/fcta222/FinalizeAssmebly/SimpleFastaHeaders/HD1_final.fasta```
+-  ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
