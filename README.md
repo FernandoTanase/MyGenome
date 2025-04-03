@@ -131,12 +131,11 @@ TrimmomaticPE: Completed successfully
 ## Working in "/project/farman_s25abt480/fcta222/BUSCO" (MCC):
 - Copy the BuscoSingularity.sh script: ```cp /project/farman_s25abt480/SLURM_SCRIPTS/BuscoSingularity.sh .```
 -  Change email with personal email.
--  Run BUSCO: ```sbatch BuscoSingularity.sh /project/farman_s25abt480/fcta222/FinalizeAssmebly/SimpleFastaHeaders/HD1_final.fasta```
--  ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-  Run BUSCO: ```sbatch BuscoSingularity.sh /project/farman_s25abt480/fcta222/FinalizeAssmebly/SimpleFastaHeaders/fixed_HD1.fasta```
 
-# BLAST
+# BLAST (against MoRepeats.fasta).
 ## Setup modern BLAST version in VM:
-- Download latest version of BLAST.
+- Download latest version of BLAST (sec.4.3).
 - Setup PATH variable & .bash_profile file for the latest blastn version.
 ## BLAST my genome:
 - scp HD1_final.fasta from MCC -to-> VM: ```scp fcta222@mcc.uky.edu:/project/farman_s25abt480/fcta222/FinalizeAssmebly/SimpleFastaHeade
@@ -148,4 +147,14 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 - Run it again with format 6: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoRepeats.MyGenome.BLASTn6 \
 -evalue 1e-20 -outfmt 6```
 - Output: MoRepeats.MyGenome.BLASTn6
-- PARTII BLAST AND THE COMMAND LINE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Blast and the Command Line
+### Filter BLAST results based on specific criteria:
+- Blast format #6 in sec.4.8.
+### Extract specific reult lines:
+- Copy the SeqLen.pl script from MCC-to-> blast directory (in VM): ```scp fcta222@MCC.uky.edu:/project/farman_s25abt480/fcta222/FinalizeAssmebly/SeqLen/SeqLen.pl .```
+- Use the script to find the ID and length of the longest contig in HD1: ```perl SeqLen.pl HD1_final.fasta | sort -k2n```: 3624    40980394
+### Sort results:
+- To uncover the order of repeat sequences on the contig: ```awk '$2 ~/contig<contigID>/' MoRepeats.MyGenomeBLASTn6 | sort -k9n```: replace <contigID> with specific contig#.
+
+# BLAST (HD1 against MoMitochondrion.fasta).
+## TODO: MODULE 7, Step7 >>>>>>>>>>>>>>>>>>>>>>>
