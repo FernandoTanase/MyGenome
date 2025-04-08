@@ -132,6 +132,7 @@ TrimmomaticPE: Completed successfully
 - Copy the BuscoSingularity.sh script: ```cp /project/farman_s25abt480/SLURM_SCRIPTS/BuscoSingularity.sh .```
 -  Change email with personal email.
 -  Run BUSCO: ```sbatch BuscoSingularity.sh /project/farman_s25abt480/fcta222/FinalizeAssmebly/SimpleFastaHeaders/fixed_HD1.fasta```
+- Fold Coverage = (total bases in cleaned reads/genome sinze with step2), C = 98.6%, C+F= 98.8%.
 
 # BLAST (against MoRepeats.fasta).
 ## Setup modern BLAST version in VM:
@@ -156,5 +157,15 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 ### Sort results:
 - To uncover the order of repeat sequences on the contig: ```awk '$2 ~/contig<contigID>/' MoRepeats.MyGenomeBLASTn6 | sort -k9n```: replace <contigID> with specific contig#.
 
-# BLAST (HD1 against MoMitochondrion.fasta).
-## TODO: MODULE 7, Step7 >>>>>>>>>>>>>>>>>>>>>>>
+# BLAST (HD1 against MoMitochondrion.fasta & B71v2sh_masked.fasta).
+## Download MoMitochondrion.fasta sequence from Farman Lab machine:
+- ```scp ngs@10.163.183.71:Desktop/MoMitochondrion.fasta .```
+## BLAST the MoMitochondrion.fasta sequence against HD1.fasta using output format 6 with specific column selections:
+- ```singularity run --app blast2120 /share/singularity/images/ccs/conda/amd-conda1-centos8.sinf blastn -query MoMitochondrion.fasta -subject HD1_nh.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid slen length qstart qend sstart send btop' -out MoMitochondrion.HD1.BLAST```
+- Output file: 'MoMitochondrion.HD1.BLAST'
+## Export list of contigs where alignment covers > 90% of the subject contig (NCBI upload along with HD1 assembly):
+- ```awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' MoMitochondrion.HD1.BLAST > HD1_mitochondrion.csv```
+## Copy the B71v2sh_masked.fasta genome:
+- ```scp ngs@10.163.183.71:Desktop/B71v2sh_masked.fasta .```
+## Run BLAST against B71v2sh_masked.fasta:
+- ```singularity run --app blast2120 /share/singularity/images/ccs/conda/amd-conda1-centos8.sin blastn -query B71v2sh_masked.fasta -subject HD1_final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.HD1.BLAST```<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<ERRRRRRRRRROOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRR.
