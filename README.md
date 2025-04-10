@@ -168,4 +168,7 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 ## Copy the B71v2sh_masked.fasta genome:
 - ```scp ngs@10.163.183.71:Desktop/B71v2sh_masked.fasta .```
 ## Run BLAST against B71v2sh_masked.fasta:
-- ```singularity run --app blast2120 /share/singularity/images/ccs/conda/amd-conda1-centos8.sin blastn -query B71v2sh_masked.fasta -subject HD1_final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.HD1.BLAST```<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<ERRRRRRRRRROOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRR.
+- ```singularity run --app blast2120 /share/singularity/images/ccs/conda/amd-conda1-centos8.sinf blastn -query B71v2sh_masked.fasta -subject HD1_final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.HD1.BLAST```
+- Output: B71v2sh.HD1.BLAST
+## Identifying genetic variants between the B71v2sh genome and HD1 genome:
+- Copy 'B71v2sh.HD1.BLAST' into the directory '/project/farman_s24cs485g/BLAST': ```cp B71v2sh.HD1.BLAST /project/farman_s24cs485g/BLAST``` PERMISSION DENIED!!!!!!!
