@@ -170,5 +170,28 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 ## Run BLAST against B71v2sh_masked.fasta:
 - ```singularity run --app blast2120 /share/singularity/images/ccs/conda/amd-conda1-centos8.sinf blastn -query B71v2sh_masked.fasta -subject HD1_final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.HD1.BLAST```
 - Output: B71v2sh.HD1.BLAST
+## Export a list of contigs:
+- ```awk '$3/$4 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.HD1.BLAST > HD1_mitochondrion.csv```
 ## Identifying genetic variants between the B71v2sh genome and HD1 genome:
-- Copy 'B71v2sh.HD1.BLAST' into the directory '/project/farman_s24cs485g/BLAST': ```cp B71v2sh.HD1.BLAST /project/farman_s24cs485g/BLAST``` PERMISSION DENIED!!!!!!!
+- Copy 'B71v2sh.HD1.BLAST' into the directory '/project/farman_s24cs485g/BLAST': ```cp B71v2sh.HD1.BLAST /project/farman_s25abt480/CLASS_BLASTs```
+
+# Gene Prediction.
+## I) SNAP.
+### scp HD1.fasta (finalized):
+- ```scp fcta222@mcc.uky.edu:/project/farman_s25abt480/fcta222/FinalizeAssmebly/SimpleFastaHeaders/HD1_final.fasta .```
+### Rename file:
+- ```mv HD1_final.fasta HD1.fasta```
+### Run SNAP:
+- ```snap-hmm Moryzae.hmm  HD1.fasta > HD1-snap.zff```
+### Compute statistics using fathom:
+- ```fathom HD1-snap.zff  HD1.fasta -gene-stats```
+### Generate gff2 file:
+- ```snap-hmm Moryzae.hmm  HD1.fasta -gff  >  HD1-snap.gff2```
+## II) AUGUSTUS.
+### Run AUGUSTUS:
+- ```augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/HD1.fasta > HD1-augustus.gff3```
+## III) MAKER.
+### Create maker config files:
+- ```maker -CTL```
+### Edit maker_opts.ctl with our parameters.
+### TODO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Configure maker file (Class 5 pdf).
