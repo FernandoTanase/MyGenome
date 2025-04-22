@@ -196,6 +196,12 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 ### Edit maker_opts.ctl with our parameters.
 ### Merge everything together into one GFF file:
 - ```gff3_merge HD1.maker.output/HD1_master_datastore_index.log -o HD1-annotations.gff```
+### Upload HD1-genes.fasta.all.maker.proteins.fasta file to /project/farman_s25abt480/CLASS_PROTEINs directory:
+- ```scp HD1-genes.fasta.all.maker.proteins.fasta fcta222@mcc.uky.edu:/project/farman_s25abt480/CLASS_PROTEINs```
+### Upload HD1-genes.fasta.all.maker.transcripts.fasta to /project/farman_s25abt480/CLASS_TRANSCRIPTs directory:
+- ```scp HD1-genes.fasta.all.maker.transcripts.fasta fcta222@mcc.uky.edu:/project/farman_s25abt480/CLASS_TRANSCRIPTs/```
+### Upload HD1-annotations.gff to /project/farman_s25abt480/CLASS_GFFs directory:
+- ```scp HD1-annotations.gff fcta222@mcc.uky.edu:/project/farman_s25abt480/CLASS_GFFs```
 
 # Submit Genome Assembly to NCBI
 ## Special Fields
@@ -205,3 +211,4 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 - File uploaded: "fixed_HD1.fasta" INSTEAD OF "HD1_final.fasta" because of header formatting!
 - Gaps -> "Did you randomly merge...": No (left selections as default)
 - !!! Had to remove row "HD1_contig3819" from the submission bcause it was not present in the fasta file !!!
+- TODO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FIX SUBMISSION ERRORS!!!!!
