@@ -195,3 +195,10 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 - ```maker -CTL```
 ### Edit maker_opts.ctl with our parameters.
 ### TODO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Configure maker file (Class 5 pdf).
+
+# Submit Genome Assembly to NCBI
+## Special Fields
+- BioProject:PRJNA926786
+- BioSample: SAMNXXX (class worksheet)
+- Genome Coverage = "# total bases in cleaned reads (R1 + R2)" / "Genome size (step = 2)"
+- 
