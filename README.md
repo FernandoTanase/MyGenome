@@ -194,11 +194,14 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 ### Create maker config files:
 - ```maker -CTL```
 ### Edit maker_opts.ctl with our parameters.
-### TODO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Configure maker file (Class 5 pdf).
+### Merge everything together into one GFF file:
+- ```gff3_merge HD1.maker.output/HD1_master_datastore_index.log -o HD1-annotations.gff```
 
 # Submit Genome Assembly to NCBI
 ## Special Fields
 - BioProject:PRJNA926786
 - BioSample: SAMNXXX (class worksheet)
 - Genome Coverage = "# total bases in cleaned reads (R1 + R2)" / "Genome size (step = 2)"
-- 
+- File uploaded: "fixed_HD1.fasta" INSTEAD OF "HD1_final.fasta" because of header formatting!
+- Gaps -> "Did you randomly merge...": No (left selections as default)
+- !!! Had to remove row "HD1_contig3819" from the submission bcause it was not present in the fasta file !!!
