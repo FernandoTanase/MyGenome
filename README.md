@@ -209,3 +209,5 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 - BioSample: SAMN46818389 (class worksheet)
 - Genome Coverage (class worksheet) = "# total bases in cleaned reads (R1 + R2)" / "Genome size (step = 2)"
 - File uploaded to NCBI: "fixed_HD1.fasta" INSTEAD OF "HD1_final.fasta" because of header formatting!
+## Erorr(s) fix
+- Had to manually add "HD1_contig117" to the mithocondrial list.
