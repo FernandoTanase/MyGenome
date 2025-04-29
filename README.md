@@ -206,9 +206,6 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 # Submit Genome Assembly to NCBI
 ## Special Fields
 - BioProject:PRJNA926786
-- BioSample: SAMNXXX (class worksheet)
-- Genome Coverage = "# total bases in cleaned reads (R1 + R2)" / "Genome size (step = 2)"
-- File uploaded: "fixed_HD1.fasta" INSTEAD OF "HD1_final.fasta" because of header formatting!
-- Gaps -> "Did you randomly merge...": No (left selections as default)
-- !!! Had to remove row "HD1_contig3819" from the submission bcause it was not present in the fasta file !!!
-- TODO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FIX SUBMISSION ERRORS!!!!!
+- BioSample: SAMN46818389 (class worksheet)
+- Genome Coverage (class worksheet) = "# total bases in cleaned reads (R1 + R2)" / "Genome size (step = 2)"
+- File uploaded to NCBI: "fixed_HD1.fasta" INSTEAD OF "HD1_final.fasta" because of header formatting!
