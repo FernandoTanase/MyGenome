@@ -1,5 +1,5 @@
 # MyGenome
-## University of Kentucky, Genome Sequencing.
+## University of Kentucky, Bioinformatics-Genome Sequencing.
 
 # Sequence Quality Plots.
 ## Pre-Trimming:
