@@ -211,3 +211,7 @@ database: ```blastn -subject HD1/HD1_final.fasta -query MoRepeats.fasta -out MoR
 - File uploaded to NCBI: "fixed_HD1.fasta" INSTEAD OF "HD1_final.fasta" because of header formatting!
 ## Erorr(s) fix
 - Had to manually add "HD1_contig117" to the mithocondrial list.
+
+# Identifying Genetic Variants + Class Discussion.
+## BLAST HD1 assembly against a repeat-masked version of the B71 reference genome.
+### ```singularity run --app blast2120 /share/singularity/images/ccs/conda/amd-conda1-centos8.sinf blastn -query B71v2sh_masked.fasta -subject fixed_HD1.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.HD1.BLAST```
