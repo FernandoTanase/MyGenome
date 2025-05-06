@@ -1,6 +1,7 @@
 # MyGenome
+## Fernando C. Tanase Mosneagu
 ## University of Kentucky, Bioinformatics - Genome Sequencing.
-## 
+## Dr. Farman - Spring 2025.
 
 # Sequence Quality Plots.
 ## Pre-Trimming:
